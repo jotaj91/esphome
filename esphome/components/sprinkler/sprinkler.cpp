@@ -184,8 +184,8 @@ void SprinklerValveOperator::set_controller(Sprinkler *controller) {
 
 void SprinklerValveOperator::set_valve(SprinklerValve *valve) {
   if (valve != nullptr) {
-    if (this->state_ != IDLE) { // Only kill if not already idle
-      this->kill_();            // ensure everything is off before we let go!
+    if (this->state_ != IDLE) {  // Only kill if not already idle
+      this->kill_();             // ensure everything is off before we let go!
     }
     this->state_ = IDLE;      // reset state
     this->run_duration_ = 0;  // reset to ensure the valve isn't started without updating it
